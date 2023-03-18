@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="/audio.css" />
+		<script type="text/javascript" src="/jquery-2.2.4.min.js" ></script>
+		<script type="text/javascript" src="/audio.js" ></script>
+	</head>
+	<body>
+		<span id="audio"></span>
+	</body>
+	<script type="text/javascript">
+		var audio=new Audio({
+					top:"10px",//顶部距离
+					right:"0px",//右侧距离
+					id:"audio",//选择元素的id
+					bg:"/1ABAA7B6-6C40-40B7-AF17-AA1228C41B4E.jpeg",//默认背景
+					nextFn:function(obj){obj.play(obj.index+=1);},//点击下一曲事件
+					endFn:function(obj){obj.play(obj.index+=1);},//播放完成事件
+					list:[//播放列表，支持字符串和对象两种格式
+							{
+							name:"你的答案",//文件名称
+							src:'/你的答案-阿冗.mp3',//链接地址
+						},
+						{
+							name:"破茧",//文件名称
+							src:'/破茧-《斗罗大陆》动画2020年新主题曲.mp3',//链接地址
+						},
+					]
+				});
+		//audio.play(n); //播放歌曲.参数可写下标，如 1,2,3;歌曲名称，如01.mp3,dream it possible
+		//audio.next();  //播放下一首
+	</script>
+</html>
